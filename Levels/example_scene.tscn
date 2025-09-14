@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1ijoetycm4db"]
+
+[ext_resource type="PackedScene" uid="uid://qxvirl3dne3d" path="res://Scenes/PlaceholderPlayer.tscn" id="1_nwih5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_08apm"]
+size = Vector2(514, 30)
+
+[node name="Example scene" type="Node2D"]
+
+[node name="PlaceholderPlayer" parent="." instance=ExtResource("1_nwih5")]
+position = Vector2(541, 323)
+
+[node name="PlayerCamera" type="Camera2D" parent="PlaceholderPlayer"]
+zoom = Vector2(5, 5)
+limit_left = 0
+limit_top = 0
+limit_right = 1150
+limit_bottom = 650
+position_smoothing_enabled = true
+position_smoothing_speed = 2.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_horizontal_offset = 0.06
+drag_left_margin = 0.06
+drag_right_margin = 0.06
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(541, 323)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-6, 119)
+shape = SubResource("RectangleShape2D_08apm")
