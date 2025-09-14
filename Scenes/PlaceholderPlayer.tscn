@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://qxvirl3dne3d"]
 
-[ext_resource type="Script" uid="uid://c6w1650xgwbdo" path="res://placeholder_player.gd" id="1_1ivex"]
+[ext_resource type="Script" path="res://placeholder_player.gd" id="1_1ivex"]
 [ext_resource type="Texture2D" uid="uid://fl3itc444rcf" path="res://Sprites/SmallCrab.png" id="2_dxlxe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dxlxe"]
