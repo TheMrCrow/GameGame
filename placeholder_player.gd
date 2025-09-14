@@ -4,6 +4,11 @@ extends CharacterBody2D
 const SPEED = 60.0
 const JUMP_VELOCITY = -200.0
 
+@onready var crab_body: Sprite2D = $CrabBody
+@onready var claw_left: Sprite2D = $ClawLeft
+@onready var claw_right: Sprite2D = $ClawRight
+@onready var timer: Timer = $Timer
+
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
