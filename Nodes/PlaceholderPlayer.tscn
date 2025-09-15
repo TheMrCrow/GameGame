@@ -8,12 +8,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dxlxe"]
 
 [node name="PlaceholderPlayer" type="CharacterBody2D"]
+z_index = 1
 script = ExtResource("1_1ivex")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_dxlxe")
-
-[node name="Timer" type="Timer" parent="."]
 
 [node name="CrabBody" type="Sprite2D" parent="."]
 position = Vector2(-1.49012e-08, 0)

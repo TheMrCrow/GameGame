@@ -13,7 +13,12 @@ config_version=5
 config/name="New Game Project"
 run/main_scene="res://Levels/example_scene.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
+run/max_fps=120
 config/icon="res://icon.svg"
+
+[autoload]
+
+Player="*res://Nodes/PlaceholderPlayer.tscn"
 
 [display]
 
@@ -25,7 +30,7 @@ window/size/mode=3
 
 folder_colors={
 "res://Levels/": "red",
-"res://Scenes/": "purple",
+"res://Nodes/": "purple",
 "res://Scripts/": "teal",
 "res://Sprites/": "blue"
 }

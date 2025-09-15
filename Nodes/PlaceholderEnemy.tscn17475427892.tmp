@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4setqh32vba7"]
+
+[ext_resource type="Script" uid="uid://dfutqpwwt5b72" path="res://placeholder_enemy.gd" id="1_2i47i"]
+[ext_resource type="Texture2D" uid="uid://ds3fj0ao80tri" path="res://Sprites/Eel.png" id="2_jaqjt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wr2ag"]
+
+[node name="PlaceholderEnemy" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_2i47i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_wr2ag")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.19209e-07, 5.96046e-08)
+scale = Vector2(0.0856681, 0.0856681)
+texture = ExtResource("2_jaqjt")

@@ -1,14 +1,14 @@
 extends CharacterBody2D
 
 
-const SPEED = 60.0
-const JUMP_VELOCITY = -200.0
+@export var speed = 80
+@export var jump_time = 100
+@export var jump_speed = 1
 
 @onready var crab_body: Sprite2D = $CrabBody
 @onready var claw_left: Sprite2D = $ClawLeft
 @onready var claw_right: Sprite2D = $ClawRight
-@onready var timer: Timer = $Timer
-
+var jumping : bool = true
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -17,14 +17,19 @@ func _physics_process(delta: float) -> void:
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+		jump_time = 14
+		jumping = true
+	if Input.is_action_pressed("ui_accept") and jumping == true and jump_time > 0:
+		velocity.y = jump_speed * -180
+		jump_time -= 1
+	else:
+		jumping = false
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
+	# Movement
 	var direction := Input.get_axis("Left", "Right")
 	if direction:
-		velocity.x = direction * SPEED
+		velocity.x = direction * speed
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, speed)
 
 	move_and_slide()
