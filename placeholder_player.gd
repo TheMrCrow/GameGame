@@ -1,3 +1,4 @@
+class_name player
 extends CharacterBody2D
 
 
@@ -5,10 +6,12 @@ extends CharacterBody2D
 @export var jump_time = 100
 @export var jump_speed = 1
 
+@onready var health: Node2D = $Health
 @onready var crab_body: Sprite2D = $CrabBody
 @onready var claw_left: Sprite2D = $ClawLeft
 @onready var claw_right: Sprite2D = $ClawRight
 var jumping : bool = true
+
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
