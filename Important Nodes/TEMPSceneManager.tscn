@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4w8hv7d8u75k"]
+
+[ext_resource type="Script" uid="uid://lt43uop674k1" path="res://scene_manager.gd" id="1_yueht"]
+[ext_resource type="Shader" uid="uid://cryng4uta8f0x" path="res://Materials/FadeShader.tres" id="2_hjya1"]
+[ext_resource type="Material" uid="uid://cryng4uta8f0x" path="res://Materials/FadeShader.tres" id="3_hjya1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_83gc0"]
+shader = ExtResource("2_hjya1")
+shader_parameter/progress = 0.0
+shader_parameter/diamond_pixel_size = 100.0
+
+[node name="SceneManager" type="Node2D"]
+script = ExtResource("1_yueht")
+
+[node name="Transitioner" type="CanvasLayer" parent="."]
+
+[node name="Diamond" type="ColorRect" parent="Transitioner"]
+material = SubResource("ShaderMaterial_83gc0")
+offset_left = -440.0
+offset_top = -264.0
+offset_right = 163.0
+offset_bottom = 108.0
+scale = Vector2(1.6, 1.6)
+
+[node name="Fade" type="ColorRect" parent="Transitioner"]
+material = ExtResource("3_hjya1")
+offset_left = -440.0
+offset_top = -264.0
+offset_right = 163.0
+offset_bottom = 108.0
+scale = Vector2(1.6, 1.6)

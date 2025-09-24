@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dw2javqh6tww8"]
+
+[ext_resource type="Script" uid="uid://lt43uop674k1" path="res://scene_manager.gd" id="1_y04dt"]
+[ext_resource type="Material" uid="uid://cryng4uta8f0x" path="res://Materials/FadeShader.tres" id="2_c3pba"]
+
+[node name="SceneManager" type="Node2D"]
+script = ExtResource("1_y04dt")
+
+[node name="Transitioner" type="CanvasLayer" parent="."]
+
+[node name="Fade" type="ColorRect" parent="Transitioner"]
+material = ExtResource("2_c3pba")
+offset_left = 0.999999
+offset_top = -1.0
+offset_right = 604.0
+offset_bottom = 371.0
+scale = Vector2(3.24, 3.04)

@@ -6,17 +6,25 @@ extends CharacterBody2D
 @export var jump_time = 100
 @export var jump_speed = 1
 
+@onready var animation: AnimationPlayer = $AnimationPlayer
+@onready var sprite: AnimatedSprite2D = $AnimSprite
 @onready var health: Node2D = $Health
-@onready var crab_body: Sprite2D = $CrabBody
-@onready var claw_left: Sprite2D = $ClawLeft
-@onready var claw_right: Sprite2D = $ClawRight
-var jumping : bool = true
 
+@export var attacking : bool = false
+var jumping : bool = true
+var direction
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+
+	# Idle animation
+	#if is_on_floor() and velocity.x == 0:
+		#animation.play("Idle")
+	if attacking == false:
+		animation.play("Idle")
+
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
@@ -29,10 +37,19 @@ func _physics_process(delta: float) -> void:
 		jumping = false
 
 	# Movement
-	var direction := Input.get_axis("Left", "Right")
+	direction = Input.get_axis("Left", "Right")
 	if direction:
 		velocity.x = direction * speed
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 
 	move_and_slide()
+
+func _input(event):
+	if Input.is_action_just_pressed("Attack"):
+		if direction >= 0:
+			attacking = true
+			animation.play("Attack")
+		else:
+			attacking = true
+			animation.play("AttackLeft")

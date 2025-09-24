@@ -1,0 +1,61 @@
+[gd_scene load_steps=3 format=3 uid="uid://bem45rl2qann8"]
+
+[ext_resource type="PackedScene" uid="uid://yxdns8v8a3e6" path="res://Important Nodes/DoorToScene.tscn" id="1_4uwf5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g155e"]
+size = Vector2(514, 30)
+
+[node name="target_scene" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(16, 85)
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-6, 119)
+shape = SubResource("RectangleShape2D_g155e")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(257, 52)
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-6, 119)
+shape = SubResource("RectangleShape2D_g155e")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(-470, 53)
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(1344, 82)
+shape = SubResource("RectangleShape2D_g155e")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(-486, 20)
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(327, 123)
+shape = SubResource("RectangleShape2D_g155e")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+position = Vector2(364, 20)
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2(-6, 119)
+shape = SubResource("RectangleShape2D_g155e")
+
+[node name="TestDoor_B" parent="." instance=ExtResource("1_4uwf5")]
+position = Vector2(-389, 100)
+target_scene = "test_scene"
+target_door = "TestDoor_A"
+
+[node name="CollisionShape2D" parent="TestDoor_B" index="0"]
+position = Vector2(0, -7)
+
+[node name="Spawn" parent="TestDoor_B" index="1"]
+position = Vector2(61, 18)
+
+[editable path="TestDoor_B"]

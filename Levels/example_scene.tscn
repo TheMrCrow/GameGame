@@ -1,126 +1,145 @@
 [gd_scene load_steps=4 format=3 uid="uid://b1ijoetycm4db"]
 
-[ext_resource type="Script" uid="uid://bvkd15raxtye4" path="res://Levels/player_camera.gd" id="1_jrm3s"]
 [ext_resource type="PackedScene" uid="uid://c4setqh32vba7" path="res://Nodes/PlaceholderEnemy.tscn" id="2_jrm3s"]
+[ext_resource type="PackedScene" uid="uid://yxdns8v8a3e6" path="res://Important Nodes/DoorToScene.tscn" id="3_xeygu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_08apm"]
 size = Vector2(514, 30)
 
 [node name="Example scene" type="Node2D"]
 
-[node name="PlayerCamera" type="Camera2D" parent="."]
-zoom = Vector2(6, 6)
-process_callback = 0
-limit_left = -600
-limit_top = -600
-limit_right = 600
-limit_bottom = 600
-position_smoothing_enabled = true
-position_smoothing_speed = 6.0
-drag_horizontal_offset = 0.06
-drag_left_margin = 0.06
-drag_right_margin = 0.06
-script = ExtResource("1_jrm3s")
+[node name="Node2D2" type="Node2D" parent="."]
+position = Vector2(-188, 67)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(16, 85)
-collision_layer = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-6, 119)
-shape = SubResource("RectangleShape2D_08apm")
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2(-174, 124)
+[node name="StaticBody2D4" type="StaticBody2D" parent="Node2D2"]
+position = Vector2(114, 38)
 scale = Vector2(0.279999, 0.48)
 collision_layer = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D2/StaticBody2D4"]
 position = Vector2(-6, 119)
 shape = SubResource("RectangleShape2D_08apm")
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="."]
-position = Vector2(-194, 108)
+[node name="StaticBody2D" type="StaticBody2D" parent="Node2D2"]
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D2/StaticBody2D"]
+position = Vector2(-6, 119)
+shape = SubResource("RectangleShape2D_08apm")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="Node2D2"]
+position = Vector2(114, 23)
 scale = Vector2(0.279999, 0.48)
 collision_layer = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D2/StaticBody2D6"]
 position = Vector2(-6, 119)
 shape = SubResource("RectangleShape2D_08apm")
 
-[node name="StaticBody2D4" type="StaticBody2D" parent="."]
-position = Vector2(130, 123)
+[node name="StaticBody2D12" type="StaticBody2D" parent="Node2D2"]
+position = Vector2(540, -369)
+scale = Vector2(0.84, 3.35996)
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D2/StaticBody2D12"]
+position = Vector2(-6, 119)
+shape = SubResource("RectangleShape2D_08apm")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Node2D2"]
+position = Vector2(-210, 23)
 scale = Vector2(0.279999, 0.48)
 collision_layer = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D2/StaticBody2D3"]
 position = Vector2(-6, 119)
 shape = SubResource("RectangleShape2D_08apm")
 
-[node name="StaticBody2D5" type="StaticBody2D" parent="."]
-position = Vector2(274, 124)
+[node name="StaticBody2D5" type="StaticBody2D" parent="Node2D2"]
+position = Vector2(287, -169)
+scale = Vector2(0.119998, 1.44)
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D2/StaticBody2D5"]
+position = Vector2(-6, 119)
+shape = SubResource("RectangleShape2D_08apm")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Node2D2"]
+position = Vector2(-190, 39)
 scale = Vector2(0.279999, 0.48)
 collision_layer = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D2/StaticBody2D2"]
 position = Vector2(-6, 119)
 shape = SubResource("RectangleShape2D_08apm")
 
-[node name="StaticBody2D6" type="StaticBody2D" parent="."]
-position = Vector2(209, 109)
+[node name="StaticBody2D7" type="StaticBody2D" parent="Node2D2"]
+position = Vector2(-269, 8)
 scale = Vector2(0.279999, 0.48)
 collision_layer = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D2/StaticBody2D7"]
 position = Vector2(-6, 119)
 shape = SubResource("RectangleShape2D_08apm")
 
-[node name="StaticBody2D7" type="StaticBody2D" parent="."]
-position = Vector2(-253, 93)
+[node name="StaticBody2D8" type="StaticBody2D" parent="Node2D2"]
+position = Vector2(325, 71)
 scale = Vector2(0.279999, 0.48)
 collision_layer = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D2/StaticBody2D8"]
 position = Vector2(-6, 119)
 shape = SubResource("RectangleShape2D_08apm")
 
-[node name="StaticBody2D8" type="StaticBody2D" parent="."]
-position = Vector2(341, 156)
+[node name="StaticBody2D9" type="StaticBody2D" parent="Node2D2"]
+position = Vector2(-299, -9)
 scale = Vector2(0.279999, 0.48)
 collision_layer = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D8"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D2/StaticBody2D9"]
 position = Vector2(-6, 119)
 shape = SubResource("RectangleShape2D_08apm")
 
-[node name="StaticBody2D9" type="StaticBody2D" parent="."]
-position = Vector2(-283, 76)
+[node name="StaticBody2D10" type="StaticBody2D" parent="Node2D2"]
+position = Vector2(-336, -25)
 scale = Vector2(0.279999, 0.48)
 collision_layer = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D9"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D2/StaticBody2D10"]
 position = Vector2(-6, 119)
 shape = SubResource("RectangleShape2D_08apm")
 
-[node name="StaticBody2D10" type="StaticBody2D" parent="."]
-position = Vector2(-320, 60)
+[node name="StaticBody2D11" type="StaticBody2D" parent="Node2D2"]
+position = Vector2(-368, -41)
 scale = Vector2(0.279999, 0.48)
 collision_layer = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D10"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D2/StaticBody2D11"]
 position = Vector2(-6, 119)
 shape = SubResource("RectangleShape2D_08apm")
-
-[node name="StaticBody2D11" type="StaticBody2D" parent="."]
-position = Vector2(-352, 44)
-scale = Vector2(0.279999, 0.48)
-collision_layer = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D11"]
-position = Vector2(-6, 119)
-shape = SubResource("RectangleShape2D_08apm")
-
-[node name="Node2D" type="Node2D" parent="."]
 
 [node name="PlaceholderEnemy" parent="." instance=ExtResource("2_jrm3s")]
-position = Vector2(138, 57)
+position = Vector2(-66, 39)
+
+[node name="TestDoor_A" parent="." instance=ExtResource("3_xeygu")]
+position = Vector2(148, 171)
+target_scene = "targettest_scene"
+target_door = "TestDoor_B"
+
+[node name="CollisionShape2D" parent="TestDoor_A" index="0"]
+position = Vector2(0, 5.82403)
+scale = Vector2(0.999999, 1)
+
+[node name="Spawn" parent="TestDoor_A" index="1"]
+position = Vector2(-32, 7)
+scale = Vector2(1.00077, 1.01217)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -3
+offset_left = -684.0
+offset_top = -361.0
+offset_right = -644.0
+offset_bottom = -321.0
+scale = Vector2(25.16, 25.16)
+color = Color(0.1189, 0.17023, 0.29, 1)
+
+[editable path="TestDoor_A"]
